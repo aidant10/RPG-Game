@@ -89,3 +89,34 @@ items = {
 for item_name, item_info in items.items():
     print(f"{item_name} is: \n\t{item_info} ")
 
+# Starts game
+main_menu = "WELCOME TO THE ISLAND SURVIVAL\n"
+main_menu += "Type 'start' to start the game.\n"
+
+intro = input(main_menu)
+if intro == 'start':
+    print(f"You have started the game!\n")
+else:
+    print("\nInvalid Entry.\n")
+print("")
+
+# User picks where to begin journey
+print("You've woken up on a beach what will you do?")
+location = "Where would you like to explore? Cave, Beach or Jungle. \n"
+location += "\nEnter 'quit' to end the game.\n\n"
+print("")
+
+# Executes the statements for each picked action
+while True:
+    message = input(location)
+    if message == 'Cave':
+        print(f"Your headed to the {message}!\n")
+    elif message == 'Beach':
+        print(f"Your headed to the {message}!\n")
+    elif message == 'Jungle':
+        print(f"Your headed to the {message}!\n")
+    elif message == 'quit':
+        break  # Ends game
+    else:
+        print("\nInvalid Entry.\n")
+print("")
