@@ -1,0 +1,87 @@
+# Course: CS 30
+# Period: 1
+# Date created: 04/29/21
+# Date last modified: 04/29/21
+# Name: Aidan Tiller
+# Description: RPG Game (Location\Choices File)
+
+from inventory import inventory
+
+
+def start():
+    # User picks where to begin journey
+    print("You've woken up in a cave!")
+    location = "What would you like to do? Explore or Leave? \n"
+    location += "\nEnter 'quit' to end the game.\n\n"
+    print("")
+
+    # Executes the statements for each picked action
+    while True:
+        message = input(location)
+    # if statement for option 1
+        if message == 'explore':
+            print(f"You've chosen to {message} the cave!\n")
+            print("Looks like the cave is empty, move to next location.")
+    # Elif statement for option 2
+        elif message == 'leave':
+            print(f"You chose to {message} the cave!\n")
+            break
+        elif message == 'inventory':
+            inventory()
+        elif message == 'quit':
+            exit()  # Ends game
+        else:
+            print("\nInvalid Entry.\n")
+
+    print("")
+
+    # Begining of second option
+    print("You have now explored the cave and it's time to move on to your next location.")
+    # Obstacle
+    location2 = "There is 3 tunnels ahead of you, you do not know what is on the other side. What tunnel do you pick?\t\n Tunnel 1, Tunnel 2 or Tunnel 3?\n"
+    # Quit input
+    location2 += "\nEnter 'quit' to end the game.\n"
+
+    # Executes the proper action for each selected choice
+    while True:
+        message2 = input(location2)
+        # If statement for option 1
+        if message2 == '1':
+            print("You have entered the Jungle turn back around there is dangerous creatures this way!\n")
+        # Elif statement for option 2
+        elif message2 == '2':
+            print("You have picked Quicksand, that could be dangerous turnaround while you still can!\n")
+        # Elif statement for option 3
+        elif message2 == '3':
+            print("You have picked the beach, looks like your headed in the right direction!\n")
+            break
+        elif message2 == 'inventory':
+            inventory()
+        elif message2 == 'quit':
+            exit()  # Ends game
+        else:
+            print("\nInvalid Entry.\n")
+
+    # Final scenario
+    print("You have reached the beach and the escape plane is in sight!")
+    print("You all run towards the plane but are stopped by the pilot! You must exchange your first-aid kits for a ride home.\n")
+    # Obstacle
+    location3 = "Will you make the trade? Yes or No?\n"
+    location3 += "Enter 'quit' to end the game.\n"
+
+    # Executes the proper action for each selected choice
+    while True:
+        message3 = input(location3)
+        # If statement for option 1
+        if message3 == 'yes':
+            print("Congratulations you found the plane and have succesfully escaped the island!\n")
+            break
+        # Elif statement for option 2
+        elif message3 == 'no':
+            print("You will be stuck on the island and fail to escape!\n")
+        elif message3 == 'inventory':
+            inventory()
+        elif message3 == 'quit':
+            exit()  # Ends game
+        else:
+            print("\nInvalid Entry.\n")
