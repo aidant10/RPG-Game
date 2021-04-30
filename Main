@@ -1,0 +1,45 @@
+# Course: CS 30
+# Period: 1
+# Date created: 04/19/2021
+# Date last modified: 04/19/2021
+# Name: Aidan Tiller
+# Description: RPG Game (Main file)
+
+from locations import start
+
+# Beggining of map
+from tabulate import tabulate
+
+# Starts game
+main_menu = "WELCOME TO THE ISLAND SURVIVAL\n"
+main_menu += "Type 'start' to start the game.\n"
+print("This game will be survival based, you and other characters will attempt to get off the island.\n")
+print("You will need to work your way from the cave, through the jungle then to the beach where your escape plane waits.\n")
+print("You can check your inventory at all time just type 'inventory'\n")
+
+intro = input(main_menu)
+if intro == 'start':
+    print(f"You have started the game!\n")
+else:
+    print("\nInvalid Entry.\n")
+print("")
+
+# Creation of the map
+# Intro to map
+print("Here is the map of the island!\n")
+
+
+def print_map():
+    """Creates a grid for the map using tabulate and arrays"""
+    # Layout of map
+    map = [[", 'Cave', "],
+           ['Jungle', 'Quicksand', 'Beach'],
+           [", 'Plane',"]]
+    # Print map
+    print(tabulate(map, tablefmt='grid'))
+
+print("")
+
+print_map()
+
+start()
